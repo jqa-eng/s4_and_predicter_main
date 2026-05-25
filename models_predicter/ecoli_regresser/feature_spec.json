@@ -1,0 +1,80 @@
+{
+  "locked": true,
+  "selector": {
+    "type": "TwoStage_SelectKBest_RFE",
+    "stage1": {
+      "var_thresh_ratio": 0.1,
+      "spearman_th": 0.98,
+      "target_corr_min": 0.0,
+      "top_k_corr": 256
+    },
+    "stage2": {
+      "method": "SelectKBest(f_regression) -> RFE(RandomForest)",
+      "prefilter_k": 160,
+      "n_select": 24,
+      "rfe_estimator": "RandomForest(n_estimators=200, max_depth=12, bootstrap=False)",
+      "random_state": 42
+    },
+    "topk": 24
+  },
+  "scaler": {
+    "type": "None",
+    "mean": [],
+    "scale": []
+  },
+  "selected_indices": [
+    2875,
+    2418,
+    3382,
+    3776,
+    4028,
+    1680,
+    3792,
+    758,
+    2879,
+    3996,
+    3124,
+    1728,
+    108,
+    4243,
+    3595,
+    2347,
+    2283,
+    3982,
+    2216,
+    2498,
+    2743,
+    2687,
+    2671,
+    2637
+  ],
+  "selected_names": [
+    "RDK_649",
+    "RDK_192",
+    "RDK_1156",
+    "RDK_1550",
+    "RDK_1802",
+    "ECFP4_1669",
+    "RDK_1566",
+    "ECFP4_747",
+    "RDK_653",
+    "RDK_1770",
+    "RDK_898",
+    "ECFP4_1717",
+    "ECFP4_97",
+    "RDK_2017",
+    "RDK_1369",
+    "RDK_121",
+    "RDK_57",
+    "RDK_1756",
+    "MACCS_157",
+    "RDK_272",
+    "RDK_517",
+    "RDK_461",
+    "RDK_445",
+    "RDK_411"
+  ],
+  "task": "ecoli",
+  "feat_start": 3,
+  "feat_count": 4274
+}

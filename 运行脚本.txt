@@ -1,0 +1,60 @@
+python get_datasets.py --src datasets/standard_datasets/clean_data_v2.csv --out-dir datasets/standard_datasets/aureus_mic_datasets --task aureus --target-col S.aureus --random-split
+得到S.aureus预测任务的训练数据集的指令
+
+python clean_ecoli_data.py 
+获取完整ecoli抗菌活性数据集的指令
+
+python get_datasets.py --src datasets/standard_datasets/clean_data_Ecoli.csv --out-dir datasets/standard_datasets/ecoli_mic_datasets --task ecoli --target-col Ecoli_MIC_ugmL --smiles-col SMILES --random-split
+将ecoli抗菌活性数据进行划分的指令
+
+python get_datasets.py --src datasets/standard_datasets/clean_data_v2.csv --out-dir datasets/standard_datasets/toxicity_datasets --task toxicity --target-col cytotoxicity --classifier --random-split
+得到训练细胞毒性分类模型的数据集
+
+python enhanced_datasets.py --in datasets/standard_datasets/aureus_merged_datasets/aureus_train.csv --in datasets/standard_datasets/aureus_merged_datasets/aureus_val.csv --in datasets/standard_datasets/aureus_merged_datasets/aureus_test.csv 
+数据集特征增强（用于训练预测模型的前置脚本）
+
+python train_ecoli_paperalign.py --train datasets/standard_datasets/ecoli_mic_datasets/ecoli_train.csv --val datasets/standard_datasets/ecoli_mic_datasets/ecoli_val.csv --test datasets/standard_datasets/ecoli_mic_datasets/ecoli_test.csv --output-dir models_predicter/ecoli_regresser_new
+ecoli_MIC回归模型训练脚本
+
+python train_classifier.py --train datasets/standard_datasets/toxicity_datasets/toxicity_train.csv --val datasets/standard_datasets/toxicity_datasets/toxicity_val.csv --test datasets/standard_datasets/toxicity_datasets/toxicity_test.csv --task toxicity --feat-start 2 --feat-count 4274 --output-dir models_predicter/toxicity_classifier_4274d/
+细胞毒性分类模型的训练脚本
+
+python train_aureus_regresser_fixed.py --train datasets/standard_datasets/aureus_merged_datasets/aureus_train.csv --val datasets/standard_datasets/aureus_merged_datasets/aureus_val.csv --test datasets/standard_datasets/aureus_merged_datasets/aureus_test.csv --output-dir models_predicter/aureus_regresser_merged/
+aureus回归模型（新旧数据混合）训练脚本
+
+
+python run_rl_v1.py --device cuda
+
+python run_rl_v2.py --base-model models_s4/025 --device cuda
+
+python run_rl_v3.py --base-model models_s4/025 --output-dir reinforced_s4_v3_both --device cuda --anti-weights pos=0.45,neg=0.55 --len-max 80
+基础RL优化的脚本，包含KL正则化和切比雪夫聚合，稳定的训练，但是细胞毒性有问题（使用原始数据集训练下的回归模型）
+
+python genmol_v1_fixed.py --model-dir models_s4/025 --n 5000 --batch 1000 --out molecules.csv --required-prefix "O=C(c1ccc(Br)c(Br)c1)c2n[nH]nc2N(Cc3ccccc3)C"
+带有过滤的分子生成脚本
+
+python run_rl_v3_continue.py --base-model reinforced_s4_v3_continue/checkpoints/step_001000 --output-dir reinforced_s4_v3_continue_tox --device cuda --len-max 80
+进一步继续训练RL的脚本
+
+python genmol_search.py --model-dir reinforced_s4_v3_continue_tox
+
+
+python get_qed_sa.py --csv molecules/molecules_linear_RL_temp1.1/molecules_raw_linear_RL_temp1.1.csv
+计算得到文件中分子的QED和SA，并增加到后两列
+
+python genmol_raw.py --model-dir reinforced_s4_linear --temp 1.1 --required-prefix-smiles c1n[nH]nc1 --output-csv molecules_raw_linear_RL.csv
+不过滤，直接生成一定数量的分子
+
+python run_rl_linear.py --base-model models_s4/025 --output-dir reinforced_s4_linear --device cuda
+
+python log_and_split_aureus.py --input datasets/standard_datasets/aureus_merged.csv --output_dir datasets/standard_datasets/aureus_merged_datasets/
+将新增加的数据合并到原先的aureus数据中，计算对数值并进行数据划分
+
+python mol_filter.py --input molecules/molecules_v3_continue_tox_10/mol_processed.csv --output molecules/molecules_v3_continue_tox_10/mol_filtered.csv
+仅根据aureus_MIC是否小于20作为唯一筛选的依据
+
+python cubic_graph.py --mol-processed molecules/molecules_v3_continue_tox_10/mol_processed.csv --mol-filtered molecules/molecules_v3_continue_tox_10/mol_filtered.csv
+绘制立体图，标出所有符合候选条件的分子
+
+python embedded_graph.py --mol-processed molecules/molecules_v3_continue_tox_10/mol_processed.csv --mol-filtered molecules/molecules_v3_continue_tox_10/mol_filtered.csv
+绘制嵌入图，UMAP，标出前100小的aureus_MIC

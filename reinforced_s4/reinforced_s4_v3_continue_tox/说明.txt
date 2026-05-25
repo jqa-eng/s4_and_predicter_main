@@ -1,0 +1,3 @@
+s4 -> run_rl_v3.py -> run_rl_v3_continue.py(1000steps,tox_ceil=0.42) -> run_rl_v3_continue.py(tox_ceil=0.5) -> 此模型
+
+此模型后期reward 过高，因此采样应当用2.0采样温度

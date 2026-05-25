@@ -1,0 +1,5 @@
+{
+  "best_step": 2000,
+  "best_epoch": 2,
+  "best_epoch_mean_reward": 0.6083833550810814
+}

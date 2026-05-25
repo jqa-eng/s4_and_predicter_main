@@ -1,0 +1,21 @@
+{
+    "loss": -0.8614928722381592,
+    "reward_sample_mean": 0.1932896890793927,
+    "reward_sample_max": 0.5336717367172241,
+    "reward_ref_mean": 0.28427181392908096,
+    "advantage_mean": -0.09098212484968826,
+    "logmic_sample_mean": 1.5778731107711792,
+    "logmic_sample_min": 1.0385326147079468,
+    "lcb_sample_mean": 1.5778731107711792,
+    "lcb_sample_min": 1.0385326147079468,
+    "sigma_sample_mean": 0.0,
+    "active_molecules": [
+        {
+            "smiles": "Cc1n[nH]nc1CN1CCC(NC(=O)C(Cc2ccc(F)cc2)NC(=O)c2ccccc2Cl)CC1",
+            "aureus_logMIC_pred": 1.0385326147079468,
+            "epoch": 16
+        }
+    ],
+    "epoch": 16,
+    "time": 12.33707571029663
+}

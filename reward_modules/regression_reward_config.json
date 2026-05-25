@@ -1,0 +1,50 @@
+{
+  "regression_reward_config": {
+    "description": "回归奖励模块(Aureus/E.coli)专用配置 - 统一的MIC奖励函数",
+    "version": "1.0",
+    "updated": "2025-10-15",
+    "scope": "仅适用于MIC回归器，不包含分类器",
+
+    "logmic_range": {
+      "logmic_min": -0.5,
+      "logmic_max": 2.5,
+      "description": "连续底分映射区间，基于训练集分布P5-P95确定，预留冗余"
+    },
+
+    "bonus_thresholds": {
+      "mic_12_threshold": 12.0,
+      "mic_3_threshold": 3.0,
+      "bonus12": 0.10,
+      "bonus3": 0.10,
+      "total_bonus_max": 0.20,
+      "description": "阶梯加成：MIC<12加bonus12，MIC<3额外加bonus3，最大加成0.20"
+    },
+
+    "base_reward": {
+      "base_max": 0.80,
+      "description": "底分上限=1-total_bonus_max，为加成预留头间隙，避免饱和"
+    },
+
+    "formula": {
+      "description": "统一奖励公式",
+      "base_formula": "Base = base_max * clip((logmic_max - y) / (logmic_max - logmic_min), 0, 1)",
+      "bonus_formula": "Bonus = (MIC<12 ? bonus12 : 0) + (MIC<3 ? bonus3 : 0)",
+      "final_formula": "Reward = Base + Bonus ∈ [0,1]",
+      "note": "无需最终裁剪，理论上不会超过1.0"
+    },
+
+    "validation_points": {
+      "test_logmic_values": [-0.7, 0.0, 0.477, 1.0, 1.079, 2.0, 2.7],
+      "descriptions": ["很低", "低", "接近MIC=3", "中等", "接近MIC=12", "高", "很高"],
+      "expected_behaviors": [
+        "接近base_max或1.0(命中门限)",
+        "base约0.67+门限加成",
+        "MIC=3边界测试",
+        "base约0.40+可能门限",
+        "MIC=12边界测试",
+        "base约0.13",
+        "接近0"
+      ]
+    }
+  }
+}

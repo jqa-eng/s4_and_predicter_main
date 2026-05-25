@@ -1,0 +1,1 @@
+采样温度2.0，required_prefix=c1n[nH]nc1

@@ -1,0 +1,17 @@
+﻿smiles,toxicity,aureus_MIC,ecoli_MIC
+Cc1n[nH]nc1-c1cc2c(c(-c3c(Cl)cccc3Cl)c1)C(c1ccc(Cl)cc1)(c1ccc(Cl)cc1)N(c1cc(Cl)cn(C3CC(O)(CO)C3)c1=O)C2,低毒,9.036046,9.912456
+Cc1n[nH]nc1-c1cc2c(c(-c3c(Cl)cccc3Cl)c1)C(c1cccnc1)N(c1cc(Cl)cn(C3CC(O)(CO)C3)c1=O)C2,低毒,9.036046,9.719319
+Cc1n[nH]nc1-c1cc2c(c(-c3c(Cl)cccc3Cl)c1)C(c1ccc(C#N)cc1)N(c1cc(Cl)cn(C3CC(O)(CO)C3)c1=O)C2,低毒,9.036046,9.912456
+Cc1n[nH]nc1-c1cc2c(c(-c3c(Cl)cccc3Cl)c1)C(c1ccc(-c3ccc(C#N)cc3)cc1)N(c1cc(Cl)cn(C3CC(O)(CO)C3)c1=O)C2,低毒,9.036046,9.912456
+Cc1n[nH]nc1-c1cc2c(c(-c3c(Cl)cncc3Cl)c1)C(c1ccc(Cl)cc1)(c1cccc(Cl)c1)N(c1cc(Cl)cn(C3CC(O)(CO)C3)c1=O)C2,低毒,9.036046,9.912456
+Cc1n[nH]nc1-c1cc2c(c(-c3c(Cl)cccc3Cl)c1)C(c1ccc(Cl)cc1)N(c1cc(Cl)cn(C3CC(O)(COCO)C3)c1=O)C2,低毒,11.212927,11.733231
+Cc1n[nH]nc1-c1cc2c(cc1-c1cc(Cl)ccc1S(=O)(=O)c1ccsc1)C(c1ccc(Cl)cc1)N(c1cc(Cl)cn(C3CC(O)(CO)C3)c1=O)C2,低毒,9.036046,9.912456
+Cc1n[nH]nc1-c1cc2c(c(-c3c(Cl)cccc3Cl)c1)C(c1ccc(Cl)cc1)(c1ccc(Cl)nc1)N(c1cc(Cl)cn(C3CC(O)(CO)C3)c1=O)C2,低毒,9.036046,9.719319
+Cc1n[nH]nc1-c1cc(-c2c(Cl)cccc2Cl)c2c(c1)C(N)N(c1cc(Cl)cn(C3CC(O)(O)C3)c1=O)C2c1cccnc1,低毒,5.408574,9.390069
+Cc1n[nH]nc1-c1cc2c(c(-c3c(Cl)cc(C#N)cc3Cl)c1)C(c1ccc(Cl)cc1)N(c1cc(Cl)cn(C3CC(O)(CO)C3)c1=O)C2,低毒,9.954332,9.912456
+Cc1n[nH]nc1-c1cc2c(c(-c3c(Cl)cccc3Cl)c1)C(c1ccc(C#N)c(OC(F)(F)F)c1)N(c1cc(Cl)cn(C3CC(O)(CO)C3)c1=O)C2,低毒,9.036046,9.719319
+Cc1n[nH]nc1-c1coc(-c2c(Cl)cccc2Cl)c1-c1cncnc1,低毒,10.517897,10.224252
+Cc1n[nH]nc1-c1cc2c(c(-c3c(Cl)cccc3Cl)c1Cl)C(c1cc3ccc(Cl)cc3nc1O)N(c1cc(Cl)cn(C3CC(O)(CO)C3)c(=O)c1=O)C2,低毒,9.76028,9.173887
+Cc1n[nH]nc1-c1cc2c(c(-c3c(Cl)cccc3Cl)c1)C(c1ccc(Cl)cc1)N(c1cc(Cl)cn(C3CC(F)(F)C3)c1=O)C2,低毒,6.9052386,10.819605
+Cc1n[nH]nc1-c1cc2c(c(-c3c(Cl)cccc3Cl)c1)C(c1ccc(Cl)nc1)N(c1cc(Cl)cn(C3CC(O)(CO)C3)c1=O)C2,低毒,9.036046,9.719319
+Cc1n[nH]nc1-c1cc2c(c(-c3c(Cl)cccc3Cl)c1)C(c1ccc(Cl)cc1)N1CN(C3CC3)C=C(C(=O)O)C(=O)c3cc(F)c1cc3-2,低毒,5.70992,11.513729

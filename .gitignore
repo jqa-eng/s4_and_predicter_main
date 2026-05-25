@@ -1,0 +1,10 @@
+.vscode
+**__pycache__**
+build
+s4dd.egg-info
+demo
+site
+nul
+NUL
+AI-aid/
+backup/

@@ -1,0 +1,51 @@
+{
+  "task": "aureus",
+  "strategy": "aligned_with_ecoli",
+  "retrieve_mode": false,
+  "feature_selection": {
+    "method": "SelectKBest_RFE",
+    "stage1": "SelectKBest(f_regression, k=128)",
+    "stage2": "RFE(RandomForest, n_select=24)",
+    "final_n_features": 24
+  },
+  "model_type": "XGBoost",
+  "training": {
+    "method": "single_model",
+    "num_boost_round": 3000,
+    "best_iteration": 2343,
+    "early_stopping_rounds": 200,
+    "sample_weighting": true
+  },
+  "hyperparameters": {
+    "objective": "reg:squarederror",
+    "max_depth": 4,
+    "min_child_weight": 6,
+    "subsample": 0.8,
+    "colsample_bytree": 0.6,
+    "reg_lambda": 4.0,
+    "reg_alpha": 1.0,
+    "learning_rate": 0.02
+  },
+  "metrics": {
+    "train": {
+      "r2": 0.835433948639595,
+      "rmse": 0.2820323378150636,
+      "pearson": 0.9219838439080423
+    },
+    "val": {
+      "r2": 0.6669001049170271,
+      "rmse": 0.39711385206114774,
+      "pearson": 0.8223036968705677
+    },
+    "test": {
+      "r2": 0.7103710184014145,
+      "rmse": 0.3799145933328551,
+      "pearson": 0.8580573158837564
+    }
+  },
+  "data": {
+    "n_train": 212,
+    "n_val": 45,
+    "n_test": 47
+  }
+}

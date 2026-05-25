@@ -1,0 +1,14 @@
+{
+  "version": "v3",
+  "fusion_mode": "hard",
+  "best_step": 5200,
+  "best_epoch": 13,
+  "best_epoch_mean_reward": 0.9749618403613567,
+  "channels_enabled": {
+    "aureus": true,
+    "ecoli": true,
+    "tox": true
+  },
+  "temperature": 1.0,
+  "base_model": "reinforced_s4_v3_continue/checkpoints/step_001000"
+}

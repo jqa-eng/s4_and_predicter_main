@@ -1,0 +1,20 @@
+{
+  "version": "linear",
+  "best_step": 1600,
+  "best_epoch": 4,
+  "best_epoch_mean_reward": 0.46735678166151046,
+  "channels_enabled": {
+    "aureus": true,
+    "ecoli": true,
+    "tox": true
+  },
+  "temperature": 1.1,
+  "base_model": "models_s4/025",
+  "weights": {
+    "aureus": 0.4,
+    "ecoli": 0.4,
+    "tox": 0.2
+  },
+  "mic_sig_center": 3.0,
+  "mic_sig_sharpness": 2.0
+}

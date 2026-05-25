@@ -1,0 +1,7 @@
+smiles,aureus_logMIC_pred,epoch
+Cn1nnnc1C(NC(=O)c1cccnc1)c1ccccc1,1.069859624,20
+Cc1n[nH]nc1C(=O)N1CCN(c2cc3c(cc2F)c(=O)c(C(=O)O)cn3C2CC2)CC1,0.855637908,9
+Cc1n[nH]nc1CN(C)C(=O)c1cc2c(C)nn(C)c2cc1C,1.031065226,12
+Cc1n[nH]nc1CN1CCC(NC(=O)C(Cc2ccc(F)cc2)NC(=O)c2ccccc2Cl)CC1,1.038532615,16
+Cc1n[nH]nc1CN1CCC(C(=O)c2ccc(F)cc2Cl)CC1,0.994374275,25
+Cc1n[nH]nc1C(c1ccc(C(C)(C)C)cc1)N1C(=O)c2ccccc2C1=O,1.043343067,26

@@ -1,0 +1,12 @@
+{
+    "epoch": 13,
+    "k_lcb": 0.5,
+    "lr": 0.0005,
+    "batch_size": 32,
+    "required_prefix": "Cc1n[nH]nc1",
+    "temp_sample": 0.9,
+    "temp_ref": 0.5,
+    "predictor_dir": "models_predicter/aureus_predictor_2",
+    "pca_path": "models_predicter/aureus_predictor_2/pca_32d.pkl",
+    "base_model_dir": "models_s4/025"
+}

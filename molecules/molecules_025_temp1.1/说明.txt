@@ -1,0 +1,1 @@
+直接调用RL前的S4模型，证明RL的有效性，genmol_raw.py, temp=1.1, required_prefix=c1n[nH]nc1

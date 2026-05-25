@@ -1,0 +1,15 @@
+{
+    "loss": -0.7203426361083984,
+    "reward_sample_mean": 0.18242121976800263,
+    "reward_sample_max": 0.4863092005252838,
+    "reward_ref_mean": 0.26838472997769713,
+    "advantage_mean": -0.0859635102096945,
+    "logmic_sample_mean": 1.5837903022766113,
+    "logmic_sample_min": 1.0954331159591675,
+    "lcb_sample_mean": 1.5837903022766113,
+    "lcb_sample_min": 1.0954331159591675,
+    "sigma_sample_mean": 0.0,
+    "active_molecules": [],
+    "epoch": 22,
+    "time": 12.377599954605103
+}
