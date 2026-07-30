@@ -1,1 +1,0 @@
-关于cairo的错误，可以用conda install -c conda-forge cairo pycairo pkg-config meson ninja下载
