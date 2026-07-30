@@ -206,17 +206,6 @@ python run_rl_linear.py \
 
 This script provides a linear weighted RL baseline for comparison with the Chebyshev-based RL strategy.
 
-### 6.4 Earlier RL Versions
-
-The repository may also contain earlier RL scripts such as:
-
-```bash
-python run_rl_v1.py --device cuda
-python run_rl_v2.py --base-model models_s4/025 --device cuda
-```
-
-These earlier versions are retained as experimental records. They are not recommended as the main reproduction entry because they are less complete than the v3 implementation.
-
 ## 7. Molecular Generation
 
 ### 7.1 Generate Molecules with Fixed Prefix and Filtering
